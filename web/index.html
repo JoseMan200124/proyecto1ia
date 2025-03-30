@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Detección de Reseñas Falsas</title>
+  <!-- Vista responsive para dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Vinculamos la hoja de estilos -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tipografía Google (opcional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Contenedor principal que ocupa toda la pantalla para el sticky footer -->
+  <div class="wrapper">
+
+    <!-- Header / Navbar -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <h1>Detección de Reseñas Falsas</h1>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+
+      <!-- Tarjeta para ingresar reseña y predecir -->
+      <section class="card">
+        <h2>Ingresa tu reseña</h2>
+        <textarea id="reviewInput" placeholder="Escribe aquí tu reseña"></textarea>
+
+        <!-- Loader para la predicción -->
+        <div id="predictLoader" class="loader"></div>
+
+        <button id="predictBtn">Predecir</button>
+        <div id="result"></div>
+      </section>
+
+      <!-- Tarjeta para entrenar el modelo -->
+      <section class="card">
+        <h2>Entrenar el modelo</h2>
+        <p>
+          Haz clic en "Entrenar Modelo" para actualizar el modelo con los datos más recientes
+          y así mejorar la precisión en la detección de reseñas falsas.
+        </p>
+
+        <!-- Loader para el entrenamiento -->
+        <div id="trainLoader" class="loader"></div>
+
+        <button id="trainBtn">Entrenar Modelo</button>
+        <div id="trainStatus"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer (fuera de .wrapper para sticky) -->
+  <footer class="footer">
+    <p>&copy; 2023 - Proyecto de Detección de Reseñas Falsas</p>
+  </footer>
+
+  <!-- Tu código JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

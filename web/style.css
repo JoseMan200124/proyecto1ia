@@ -1,0 +1,148 @@
+/*
+  1) Reset básico de márgenes y rellenos.
+  2) Definición de variables de color y fuente para fácil mantenimiento.
+  3) Incorporación de un estilo más moderno con tarjetas (cards), navbar y footer.
+*/
+
+/* RESETEO Y TIPOGRAFÍA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de colores y fuente */
+:root {
+  --primary-color: #007BFF;
+  --primary-hover: #0056b3;
+  --background-color: #f5f5f5;
+  --card-background-color: #fff;
+  --text-color: #333;
+  --footer-background-color: #222;
+  --footer-text-color: #fff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%; /* Para el sticky footer */
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* WRAPPER: Contiene header y main */
+.wrapper {
+  flex: 1; /* Ocupar el espacio restante para que el footer quede abajo */
+}
+
+/* HEADER - NAVBAR */
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__logo h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* TARJETAS */
+.card {
+  background: var(--card-background-color);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* ÁREA DE TEXTO */
+textarea {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Loader (spinner) */
+.loader {
+  display: none; /* Oculto por defecto */
+  margin: 0.5rem 0;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #f3f3f3; /* color gris claro */
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color); /* color primario para la animación */
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* BOTONES */
+button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  margin-top: 1rem; /* Separación con el texto anterior */
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* RESULTADOS Y MENSAJES */
+#result, #trainStatus {
+  margin-top: 1rem;
+  font-weight: bold;
+  white-space: pre-wrap;  /* Por si deseas mostrar logs o varios mensajes con saltos de línea */
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 1rem;
+  /* Pegado al fondo (sticky) al usar flex en body y .wrapper ocupando el resto */
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
