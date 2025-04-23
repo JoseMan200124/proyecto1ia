@@ -192,7 +192,6 @@ def train_model():
     df["mapped_label"] = df["label"].apply(map_label)
     df.dropna(subset=["mapped_label"], inplace=True)
     df.rename(columns={"text_": "review"}, inplace=True)
-
     # Generar tokens
     docs_tokens = []
     labs = []
